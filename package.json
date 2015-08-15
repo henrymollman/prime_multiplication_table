@@ -1,0 +1,14 @@
+{
+  "name": "primes_table",
+  "version": "1.0.0",
+  "description": "A multiplication table of prime numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "./spec/getPrimes.spec.js"
+  },
+  "author": "Henry Mollman",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
