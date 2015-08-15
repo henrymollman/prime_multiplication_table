@@ -76,7 +76,7 @@ PrimesTable.prototype.generateTableValues = function(primes, index) {
 // this function renders the values from the above function into a string with uniform widths among cells
 PrimesTable.prototype.renderRow = function (inputArray, width) {
   var rowArray = [],
-      len = inputArray.length;
+      len = inputArray.length,
       i, 
       whiteSpace = " ";
 
