@@ -92,10 +92,13 @@ PrimesTable.prototype.renderRow = function (inputArray, width) {
 // the function also checks the length of the array of primes and renders additional tables if necessary
 PrimesTable.prototype.createTable = function(primesArray) {
 
-  if (primesArray.length > 10) {
-    return this.createLargeTable(primesArray);
-  }
   var primes = primesArray.slice();
+
+  if (primes.length > 10) {
+    var y = arguments[1] || 0, x = y + 10;
+    return "\n" + this.createTable(primesArray.slice(y, x)) + this.createTable(primesArray.slice(y + 10));
+  }
+
   var primesTable = this;
   var width = (primes[primes.length - 1] * primes[primes.length - 1]).toString().length + 1;
 
@@ -114,23 +117,8 @@ PrimesTable.prototype.createTable = function(primesArray) {
 
   return table.reduce(function(acc, item) {
     return acc + item + "\n"
-  }, "");
+  }, "") + "\n";
 };
-
-// this function will be called by createTable if the table would be too large to be rendered in the console
-PrimesTable.prototype.createLargeTable = function(primesArray) {
-  var count = primesArray.length;
-  var tableString = "";
-  var y = 0, x = 10;
-
-  while (count > 0) {
-    count = count - 10;
-    tableString = tableString + "\n" + this.createTable(primesArray.slice(y, x)) + "\n";
-    y = x;
-    x = x + 10;
-  }
-  return tableString;
-}
 
 // export the object for use by node
 module.exports = PrimesTable;

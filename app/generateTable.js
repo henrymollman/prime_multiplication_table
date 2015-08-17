@@ -1,7 +1,7 @@
 var GetPrimes = require('./getPrimes.js');
 var getPrimes = new GetPrimes();
 
-if (process.argv[2] === "-h" || process.argv[2] === "--help") {
+if (process.argv[2] === "-H" || process.argv[2] === "--help") {
   var help = "\nprime_multiplication_table \n" + 
 "\nA node.js script to generate a command-line representation of a multiplication table made up of prime numbers\n" + 
 "\n" + 
@@ -15,7 +15,7 @@ if (process.argv[2] === "-h" || process.argv[2] === "--help") {
 "\n" +
 "Where x is the number of prime numbers to generate, or the range from 0- whatever is specified if the '-sieve' option is toggled.\n" +
 "\n" +
-"Use `node app/generateTable.js -h` or `--help` for information about the scripts parameters.\n" +
+"Use `node app/generateTable.js -H` or `--help` for information about the scripts parameters.\n" +
 "\n" + 
 "# Tests\n" + 
 "Tests are located in the 'spec' subfolder, and can be run by typing\n" +
@@ -33,7 +33,7 @@ else {
 
 // if no arguments are specified in the command line, default to 10
 var n = process.argv[2] || 10;
-var sieve = process.argv[3] === "-sieve";
+var sieve = process.argv[3] === "--sieve"|| process.argv[3] === "-S";
 
 // unless 'sieve' is entered as the second argument in the CLI, use nPrimes
 var method = sieve ? getPrimes.getPrimesUpToN : getPrimes.nPrimes;

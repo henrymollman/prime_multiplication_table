@@ -84,7 +84,7 @@ describe('Output of get n primes table', function () {
   17 |   34 |   51 |   85 |  119 |  187 |  221 |  289 |  323 |  391 |  493\n\
   19 |   38 |   57 |   95 |  133 |  209 |  247 |  323 |  361 |  437 |  551\n\
   23 |   46 |   69 |  115 |  161 |  253 |  299 |  391 |  437 |  529 |  667\n\
-  29 |   58 |   87 |  145 |  203 |  319 |  377 |  493 |  551 |  667 |  841\n"
+  29 |   58 |   87 |  145 |  203 |  319 |  377 |  493 |  551 |  667 |  841\n\n"
 
         expect(table).toEqual(testTable);
     });
@@ -97,15 +97,5 @@ describe('Output of get prime table', function () {
       var primes = getPrimes.nPrimes(10);
       var table = getPrimes.createTable(primes);
         expect(getPrimes.createLargeTable.callCount).toBe(0);
-    });
-});
-
-describe('Output of get prime table', function () {
-    it('should use a large function to output table depending on length', function () {
-      var getPrimes = new GetPrimes();
-      spyOn(getPrimes, 'createLargeTable')
-      var primes = getPrimes.getPrimesUpToN(1000);
-      var table = getPrimes.createTable(primes);
-        expect(getPrimes.createLargeTable).toHaveBeenCalled();
     });
 });
