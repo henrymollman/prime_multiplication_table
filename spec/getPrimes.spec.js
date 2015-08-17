@@ -20,12 +20,6 @@ describe('Functions that should exist', function() {
   });
 });
 
-describe('Functions that should exist', function() {
-  it('should have an \'createTable\' function', function() {
-    expect(getPrimes.createLargeTable).toEqual(jasmine.any(Function));
-  });
-});
-
 describe('Function to generate prime numbers', function() {
   it('should return an array', function() {
     var primes = getPrimes.nPrimes(10);
@@ -87,15 +81,5 @@ describe('Output of get n primes table', function () {
   29 |   58 |   87 |  145 |  203 |  319 |  377 |  493 |  551 |  667 |  841\n\n"
 
         expect(table).toEqual(testTable);
-    });
-});
-
-describe('Output of get prime table', function () {
-    it('should use a small function to output table depending on length', function () {
-      var getPrimes = new GetPrimes();
-      spyOn(getPrimes, 'createLargeTable')
-      var primes = getPrimes.nPrimes(10);
-      var table = getPrimes.createTable(primes);
-        expect(getPrimes.createLargeTable.callCount).toBe(0);
     });
 });
