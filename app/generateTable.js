@@ -38,7 +38,7 @@ var sieve = process.argv[3] === "--sieve"|| process.argv[3] === "-S";
 // unless 'sieve' is entered as the second argument in the CLI, use nPrimes
 var method = sieve ? getPrimes.getPrimesUpToN : getPrimes.nPrimes;
 
-var primes = method(n);
+var primes = method.call(getPrimes, n);
 
 // the main event
 console.log("\n" + getPrimes.createTable(primes));

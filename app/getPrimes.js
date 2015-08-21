@@ -2,11 +2,20 @@ var PrimesTable = function() {};
 
 // the normal get n primes function will populate an array with prime numbers until it reaches the specified amount
 PrimesTable.prototype.nPrimes = function(n) {
-  primes = [];
-  current = 2;
+  primes = [2];
+  current = 3;
 
-// this method is used to find prime numbers if a specific number of primes is needed
-  function isPrime(number) {
+  while (primes.length < n) {
+    if (this.isPrime(current)) {
+      primes.push(current);
+    }
+    current += 2;
+  }
+
+  return primes;
+};
+
+PrimesTable.prototype.isPrime = function(number) {
     var end = Math.sqrt(number);
     for (var i = 0; i < primes.length; i++) {
       if (primes[i] > end) break;
@@ -14,17 +23,7 @@ PrimesTable.prototype.nPrimes = function(n) {
     }
   
   return true;
-  }
-
-  while (primes.length < n) {
-    if (isPrime(current)) {
-      primes.push(current);
-    }
-    current++;
-  }
-
-  return primes;
-};
+}
 
 // the sieve of eratosthenes will be used if all primes up to n are needed
 PrimesTable.prototype.getPrimesUpToN = function(n) {

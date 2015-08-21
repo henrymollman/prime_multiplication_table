@@ -6,15 +6,11 @@ describe('Functions that should exist', function() {
   it('should have an \'nPrimes\' function', function() {
     expect(getPrimes.nPrimes).toEqual(jasmine.any(Function));
   });
-});
 
-describe('Functions that should exist', function() {
   it('should have an \'getPrimesUpToN\' function', function() {
     expect(getPrimes.getPrimesUpToN).toEqual(jasmine.any(Function));
   });
-});
 
-describe('Functions that should exist', function() {
   it('should have an \'createTable\' function', function() {
     expect(getPrimes.createTable).toEqual(jasmine.any(Function));
   });
@@ -25,37 +21,27 @@ describe('Function to generate prime numbers', function() {
     var primes = getPrimes.nPrimes(10);
     expect(primes).toEqual(jasmine.any(Array));
   });
-});
 
-describe('Function to generate prime numbers', function() {
   it('should return an array', function() {
     var primes = getPrimes.getPrimesUpToN(100);
     expect(primes).toEqual(jasmine.any(Array));
   });
-});
 
-describe('Function to generate prime numbers', function() {
   it('should return an array if no arguments are passed', function() {
     var primes = getPrimes.nPrimes();
     expect(primes).toEqual(jasmine.any(Array));
   });
-});
 
-describe('Function to generate prime numbers', function() {
   it('should return an array if no arguments are passed', function() {
     var primes = getPrimes.getPrimesUpToN();
     expect(primes).toEqual(jasmine.any(Array));
   });
-});
 
-describe('Function to generate prime numbers', function() {
   it('should return an array of prime numbers', function() {
     var primes = getPrimes.nPrimes(10);
     expect(primes).toEqual([ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 ]);
   });
-});
 
-describe('Function to generate prime numbers', function() {
   it('should return the same array of prime numbers', function() {
     var nPrimes = getPrimes.nPrimes(1000);
     var sievePrimes = getPrimes.getPrimesUpToN(7920);
